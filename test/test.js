@@ -13,14 +13,14 @@ test('should call fetchData once', () => {
   expect(fetchData).toBeCalledWith('https://server/user/1');
 });
 
-test('should call fetchData once', () => {
+test('fetchData return status ok', () => {
   fetchData.mockReturnValue({ status: 'ok', level: 2 });
   const received = getLevel(1);
   const expected = 'Ваш текущий уровень: 2';
   expect(received).toBe(expected);
 });
 
-test('should call fetchData once', () => {
+test('fetchData return status error', () => {
   fetchData.mockReturnValue({ status: 'error', level: 2 });
   const received = getLevel(1);
   const expected = 'Информация об уровне временно недоступна';
